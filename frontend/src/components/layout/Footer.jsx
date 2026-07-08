@@ -71,7 +71,7 @@ const Footer = () => {
           <ul className="space-y-4 text-sm text-cream/80">
             <li className="flex items-start space-x-3">
               <FiMapPin className="w-5 h-5 text-biscuit flex-shrink-0 mt-0.5" />
-              <span>102 Elite Avenue, Fashion Center, Hyderabad, TS, India</span>
+              <span>Bankers Colony,Srikakulam, India</span>
             </li>
             <li className="flex items-center space-x-3">
               <FiPhone className="w-5 h-5 text-biscuit flex-shrink-0" />
