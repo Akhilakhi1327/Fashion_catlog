@@ -60,7 +60,6 @@ const AdminForgotPasswordPage = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="input pl-10 w-full"
-                  placeholder="admin@elitefashion.com"
                 />
               </div>
             </div>

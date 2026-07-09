@@ -7,16 +7,23 @@ import { FiMail, FiArrowLeft } from 'react-icons/fi';
 const ForgotPasswordPage = () => {
   const [email, setEmail] = useState('');
   const [isSent, setIsSent] = useState(false);
-  const { forgotPassword, loading } = useCustomerAuth();
+  const { forgotPassword, loading, error } = useCustomerAuth();
   const toast = useToast();
+
+  React.useEffect(() => {
+    if (error) {
+      toast.error(error);
+    }
+  }, [error, toast]);
 
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
       await forgotPassword(email);
       setIsSent(true);
+      toast.success('Password reset link sent successfully!');
     } catch (err) {
-      // Error handled in context
+      // Handled in context & useEffect
     }
   };
 
@@ -51,7 +58,6 @@ const ForgotPasswordPage = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="input pl-10 w-full"
-                  placeholder="you@example.com"
                 />
               </div>
             </div>
