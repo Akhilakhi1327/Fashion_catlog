@@ -45,7 +45,7 @@ const registerUser = asyncHandler(async (req, res) => {
     try {
       await sendEmail({
         email: userExists.email,
-        subject: 'Elite Fashion - Verify Your Email',
+        subject: 'House Of Induva - Verify Your Email',
         html: message,
       });
       return res.status(200).json({
@@ -86,7 +86,7 @@ const registerUser = asyncHandler(async (req, res) => {
     try {
       await sendEmail({
         email: user.email,
-        subject: 'Elite Fashion - Verify Your Email',
+        subject: 'House Of Induva - Verify Your Email',
         html: message,
       });
       res.status(201).json({
@@ -247,7 +247,7 @@ const forgotPassword = asyncHandler(async (req, res) => {
   try {
     await sendEmail({
       email: user.email,
-      subject: 'Elite Fashion - Password Reset Link',
+      subject: 'House Of Induva - Password Reset Link',
       html: message,
     });
 

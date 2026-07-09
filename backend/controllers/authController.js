@@ -217,7 +217,7 @@ const forgotPasswordAdmin = asyncHandler(async (req, res) => {
   try {
     await sendEmail({
       email: admin.email,
-      subject: 'Elite Fashion Admin - Password Reset Link',
+      subject: 'House Of Induva Admin - Password Reset Link',
       html: message,
     });
 

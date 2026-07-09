@@ -171,7 +171,7 @@ const createOrder = asyncHandler(async (req, res) => {
       const customerEmailMessage = `
         Dear ${customerName},
 
-        Thank you for shopping with Elite Fashion! We have received your order and our team is already working on processing it.
+        Thank you for shopping with House Of Induva! We have received your order and our team is already working on processing it.
 
         Order Summary:
         - Order ID: ${order._id}
@@ -188,13 +188,13 @@ const createOrder = asyncHandler(async (req, res) => {
         We will keep you updated on the shipment status. For any queries, feel free to reply to this email.
 
         Best regards,
-        The Elite Fashion Team
+        The House Of Induva Team
       `;
 
       try {
         await sendEmail({
           email: req.user.email,
-          subject: `Order Confirmation - Elite Fashion (Order #${order._id})`,
+          subject: `Order Confirmation - House Of Induva (Order #${order._id})`,
           message: customerEmailMessage,
         });
         logger.info(`Transactional order confirmation email sent to customer: ${req.user.email}`);
@@ -426,13 +426,13 @@ const updateOrderStatus = asyncHandler(async (req, res) => {
       We will notify you further as shipping progresses.
 
       Best regards,
-      The Elite Fashion Team
+      The House Of Induva Team
     `;
 
     try {
       await sendEmail({
         email: order.user.email,
-        subject: `Order Status Update: ${status} - Elite Fashion`,
+        subject: `Order Status Update: ${status} - House Of Induva`,
         message: statusUpdateMessage,
       });
       logger.info(`Order status update email sent to customer: ${order.user.email}`);

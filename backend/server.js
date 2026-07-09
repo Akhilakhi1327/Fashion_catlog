@@ -78,7 +78,7 @@ app.use('/api/users/forgot-password', authLimiter);
 
 // Health Check API
 app.get('/api/health', (req, res) => {
-  res.status(200).json({ success: true, message: 'Elite Fashion API is healthy' });
+  res.status(200).json({ success: true, message: 'House Of Induva API is healthy' });
 });
 
 // Dynamic Public Configuration API
