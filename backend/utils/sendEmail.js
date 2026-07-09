@@ -1,4 +1,11 @@
 const nodemailer = require('nodemailer');
+const dns = require('dns');
+
+// Force Node.js to prefer IPv4 DNS resolution. 
+// Fixes ENETUNREACH error on Render when trying to connect to Gmail SMTP over IPv6.
+if (typeof dns.setDefaultResultOrder === 'function') {
+  dns.setDefaultResultOrder('ipv4first');
+}
 
 const sendEmail = async (options) => {
   try {
