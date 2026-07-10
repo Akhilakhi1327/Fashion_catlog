@@ -21,6 +21,10 @@ connectDB().then(() => {
 
 const app = express();
 
+// Trust first proxy (required for Render, Heroku, etc.)
+// Fixes express-rate-limit ERR_ERL_UNEXPECTED_X_FORWARDED_FOR error
+app.set('trust proxy', 1);
+
 // Security Middlewares
 app.use(helmet());
 
